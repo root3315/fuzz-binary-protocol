@@ -1,0 +1,2 @@
+/bin/ar qc libfuzzproto.a CMakeFiles/fuzzproto.dir/src/protocol.cpp.o CMakeFiles/fuzzproto.dir/src/mutator.cpp.o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o
+/bin/ranlib libfuzzproto.a
