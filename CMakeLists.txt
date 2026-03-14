@@ -17,9 +17,15 @@ endif()
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 
+option(ENABLE_SANITIZER "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
+
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_options(-g -O0)
     add_compile_definitions(DEBUG=1)
+    if(ENABLE_SANITIZER)
+        add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
+        add_link_options(-fsanitize=address,undefined)
+    endif()
 else()
     add_compile_options(-O2)
 endif()
