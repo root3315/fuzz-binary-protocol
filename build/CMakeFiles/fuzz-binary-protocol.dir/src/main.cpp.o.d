@@ -1,8 +1,8 @@
 CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o: \
- /tmp/fuzz-binary-protocol_1773298162/src/main.cpp \
+ /tmp/fuzz-binary-protocol_1774029605/src/main.cpp \
  /usr/include/stdc-predef.h \
- /tmp/fuzz-binary-protocol_1773298162/include/fuzzer.h \
- /tmp/fuzz-binary-protocol_1773298162/include/protocol.h \
+ /tmp/fuzz-binary-protocol_1774029605/include/fuzzer.h \
+ /tmp/fuzz-binary-protocol_1774029605/include/protocol.h \
  /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -161,7 +161,7 @@ CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/optional \
  /usr/include/c++/11/bits/enable_special_members.h \
- /tmp/fuzz-binary-protocol_1773298162/include/mutator.h \
+ /tmp/fuzz-binary-protocol_1774029605/include/mutator.h \
  /usr/include/c++/11/random /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -210,8 +210,8 @@ CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o: \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
  /usr/include/c++/11/condition_variable \
- /tmp/fuzz-binary-protocol_1773298162/include/protocol.h \
- /tmp/fuzz-binary-protocol_1773298162/include/mutator.h \
+ /tmp/fuzz-binary-protocol_1774029605/include/protocol.h \
+ /tmp/fuzz-binary-protocol_1774029605/include/mutator.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
@@ -287,4 +287,13 @@ CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o: \
  /usr/include/asm-generic/posix_types.h \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/x86_64-linux-gnu/sys/wait.h /usr/include/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/include/x86_64-linux-gnu/sys/resource.h \
+ /usr/include/x86_64-linux-gnu/bits/resource.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_rusage.h
