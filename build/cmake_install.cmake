@@ -1,4 +1,4 @@
-# Install script for directory: /tmp/fuzz-binary-protocol_1773298162
+# Install script for directory: /tmp/fuzz-binary-protocol_1774029605
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -49,20 +49,20 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/tmp/fuzz-binary-protocol_1773298162/build/fuzz-binary-protocol")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/tmp/fuzz-binary-protocol_1774029605/build/fuzz-binary-protocol")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/fuzzproto" TYPE FILE FILES
-    "/tmp/fuzz-binary-protocol_1773298162/include/protocol.h"
-    "/tmp/fuzz-binary-protocol_1773298162/include/mutator.h"
-    "/tmp/fuzz-binary-protocol_1773298162/include/fuzzer.h"
+    "/tmp/fuzz-binary-protocol_1774029605/include/protocol.h"
+    "/tmp/fuzz-binary-protocol_1774029605/include/mutator.h"
+    "/tmp/fuzz-binary-protocol_1774029605/include/fuzzer.h"
     )
 endif()
 
@@ -74,5 +74,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/tmp/fuzz-binary-protocol_1773298162/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/tmp/fuzz-binary-protocol_1774029605/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -10,6 +10,10 @@
 #include <getopt.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 
 using namespace fuzzproto;
 
@@ -174,58 +178,143 @@ ExecutionResult simulateTarget(const std::vector<uint8_t>& input) {
     return result;
 }
 
-// Real target execution via subprocess
+// Execute target with proper subprocess handling
+static pid_t g_child_pid = -1;
+
+static void cleanupChild(int /*signal*/) {
+    if (g_child_pid > 0) {
+        kill(g_child_pid, SIGKILL);
+        waitpid(g_child_pid, nullptr, WNOHANG);
+    }
+}
+
 ExecutionResult executeTarget(const std::string& cmd, const std::vector<uint8_t>& input,
                                uint64_t timeout_us) {
     ExecutionResult result;
-    
+    result.status = ExecutionResult::ERROR;
+    result.exit_code = -1;
+    result.execution_time_us = 0;
+
     // Write input to temp file
     char temp_path[] = "/tmp/fuzz_input_XXXXXX";
     int fd = mkstemp(temp_path);
     if (fd < 0) {
-        result.status = ExecutionResult::ERROR;
         result.error_message = "Failed to create temp file";
         return result;
     }
-    
+
     if (write(fd, input.data(), input.size()) != static_cast<ssize_t>(input.size())) {
         close(fd);
         unlink(temp_path);
-        result.status = ExecutionResult::ERROR;
         result.error_message = "Failed to write input";
         return result;
     }
     close(fd);
-    
+
+    // Parse command and arguments
+    std::vector<char*> args;
+    std::vector<char> cmd_buffer(cmd.begin(), cmd.end());
+    cmd_buffer.push_back('\0');
+
+    char* token = std::strtok(cmd_buffer.data(), " ");
+    while (token) {
+        args.push_back(token);
+        token = std::strtok(nullptr, " ");
+    }
+    args.push_back(temp_path);
+    args.push_back(nullptr);
+
     auto start = std::chrono::steady_clock::now();
-    
-    // Execute target with input file
-    std::string full_cmd = cmd + " " + temp_path;
-    int exit_code = system(full_cmd.c_str());
-    
+
+    // Create pipe for stderr
+    int stderr_pipe[2];
+    if (pipe(stderr_pipe) != 0) {
+        unlink(temp_path);
+        result.error_message = "Failed to create pipe";
+        return result;
+    }
+
+    pid_t pid = fork();
+    if (pid < 0) {
+        close(stderr_pipe[0]);
+        close(stderr_pipe[1]);
+        unlink(temp_path);
+        result.error_message = "Fork failed";
+        return result;
+    }
+
+    if (pid == 0) {
+        // Child process
+        close(stderr_pipe[0]);
+        dup2(stderr_pipe[1], STDERR_FILENO);
+        close(stderr_pipe[1]);
+
+        // Set resource limits
+        struct rlimit rl;
+        rl.rlim_cur = 256 * 1024 * 1024;
+        rl.rlim_max = 256 * 1024 * 1024;
+        setrlimit(RLIMIT_AS, &rl);
+
+        rl.rlim_cur = 60;
+        rl.rlim_max = 60;
+        setrlimit(RLIMIT_CPU, &rl);
+
+        execvp(args[0], args.data());
+        _exit(127);
+    }
+
+    // Parent process
+    close(stderr_pipe[1]);
+    fcntl(stderr_pipe[0], F_SETFL, O_NONBLOCK);
+    g_child_pid = pid;
+
+    // Set up timeout using select on the pipe
+    struct timeval tv;
+    tv.tv_sec = timeout_us / 1000000;
+    tv.tv_usec = timeout_us % 1000000;
+
+    fd_set readfds;
+    FD_ZERO(&readfds);
+    FD_SET(stderr_pipe[0], &readfds);
+
+    int select_result = select(stderr_pipe[0] + 1, &readfds, nullptr, nullptr, &tv);
+    (void)select_result;
+    int status = 0;
+
     auto end = std::chrono::steady_clock::now();
     result.execution_time_us = std::chrono::duration_cast<std::chrono::microseconds>(
         end - start).count();
-    
-    unlink(temp_path);
-    
-    if (WIFEXITED(exit_code)) {
-        result.exit_code = WEXITSTATUS(exit_code);
-        result.status = (result.exit_code == 0) ? ExecutionResult::OK : ExecutionResult::CRASH;
-        if (result.status == ExecutionResult::CRASH) {
-            result.error_message = "Exit code: " + std::to_string(result.exit_code);
-        }
-    } else if (WIFSIGNALED(exit_code)) {
-        result.status = ExecutionResult::CRASH;
-        result.exit_code = -WTERMSIG(exit_code);
-        result.error_message = "Killed by signal: " + std::to_string(-result.exit_code);
-    }
-    
-    if (result.execution_time_us > timeout_us) {
+
+    // Check if process completed
+    pid_t wait_result = waitpid(pid, &status, WNOHANG);
+
+    if (wait_result == 0) {
+        // Timeout - kill child
+        kill(pid, SIGKILL);
+        waitpid(pid, &status, 0);
         result.status = ExecutionResult::TIMEOUT;
         result.error_message = "Timeout exceeded";
+        result.execution_time_us = timeout_us;
+    } else if (wait_result > 0) {
+        if (WIFEXITED(status)) {
+            result.exit_code = WEXITSTATUS(status);
+            result.status = (result.exit_code == 0) ? ExecutionResult::OK : ExecutionResult::CRASH;
+            if (result.status == ExecutionResult::CRASH) {
+                result.error_message = "Exit code: " + std::to_string(result.exit_code);
+            }
+        } else if (WIFSIGNALED(status)) {
+            result.status = ExecutionResult::CRASH;
+            result.exit_code = -WTERMSIG(status);
+            result.error_message = "Killed by signal: " + std::to_string(-result.exit_code);
+        }
+    } else {
+        result.error_message = "Waitpid failed";
     }
-    
+
+    close(stderr_pipe[0]);
+    unlink(temp_path);
+    g_child_pid = -1;
+
     return result;
 }
 
@@ -311,6 +400,7 @@ void runFuzzer(const Config& config) {
     // Set up signal handlers
     std::signal(SIGINT, signalHandler);
     std::signal(SIGTERM, signalHandler);
+    std::signal(SIGCHLD, cleanupChild);
     
     // Run fuzzer
     fuzzer.run(config.max_iterations);
