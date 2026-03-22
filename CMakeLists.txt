@@ -17,7 +17,7 @@ endif()
 
 add_compile_options(-Wall -Wextra -Wpedantic)
 
-option(ENABLE_SANITIZER "Enable AddressSanitizer and UndefinedBehaviorSanitizer" OFF)
+option(ENABLE_SANITIZER "Enable AddressSanitizer and UndefinedBehaviorSanitizer" ON)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_options(-g -O0)

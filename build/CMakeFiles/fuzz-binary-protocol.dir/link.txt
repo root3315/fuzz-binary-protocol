@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o -o fuzz-binary-protocol  libfuzzproto.a 
+/usr/bin/c++ -g -fsanitize=address,undefined CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o -o fuzz-binary-protocol  libfuzzproto.a 

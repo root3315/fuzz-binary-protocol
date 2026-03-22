@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/fuzz-binary-protocol_1774029605
+CMAKE_SOURCE_DIR = /tmp/fuzz-binary-protocol_1774159205
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/fuzz-binary-protocol_1774029605/build
+CMAKE_BINARY_DIR = /tmp/fuzz-binary-protocol_1774159205/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/fuzzproto.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/fuzzproto.dir/flags.make
 CMakeFiles/fuzzproto.dir/src/protocol.cpp.o: CMakeFiles/fuzzproto.dir/flags.make
 CMakeFiles/fuzzproto.dir/src/protocol.cpp.o: ../src/protocol.cpp
 CMakeFiles/fuzzproto.dir/src/protocol.cpp.o: CMakeFiles/fuzzproto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774029605/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fuzzproto.dir/src/protocol.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -MF CMakeFiles/fuzzproto.dir/src/protocol.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/protocol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774159205/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/fuzzproto.dir/src/protocol.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -MF CMakeFiles/fuzzproto.dir/src/protocol.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/protocol.cpp
 
 CMakeFiles/fuzzproto.dir/src/protocol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuzzproto.dir/src/protocol.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774029605/src/protocol.cpp > CMakeFiles/fuzzproto.dir/src/protocol.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774159205/src/protocol.cpp > CMakeFiles/fuzzproto.dir/src/protocol.cpp.i
 
 CMakeFiles/fuzzproto.dir/src/protocol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuzzproto.dir/src/protocol.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774029605/src/protocol.cpp -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774159205/src/protocol.cpp -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.s
 
 CMakeFiles/fuzzproto.dir/src/mutator.cpp.o: CMakeFiles/fuzzproto.dir/flags.make
 CMakeFiles/fuzzproto.dir/src/mutator.cpp.o: ../src/mutator.cpp
 CMakeFiles/fuzzproto.dir/src/mutator.cpp.o: CMakeFiles/fuzzproto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774029605/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fuzzproto.dir/src/mutator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -MF CMakeFiles/fuzzproto.dir/src/mutator.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/mutator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774159205/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fuzzproto.dir/src/mutator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -MF CMakeFiles/fuzzproto.dir/src/mutator.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/mutator.cpp
 
 CMakeFiles/fuzzproto.dir/src/mutator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuzzproto.dir/src/mutator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774029605/src/mutator.cpp > CMakeFiles/fuzzproto.dir/src/mutator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774159205/src/mutator.cpp > CMakeFiles/fuzzproto.dir/src/mutator.cpp.i
 
 CMakeFiles/fuzzproto.dir/src/mutator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuzzproto.dir/src/mutator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774029605/src/mutator.cpp -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774159205/src/mutator.cpp -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.s
 
 CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o: CMakeFiles/fuzzproto.dir/flags.make
 CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o: ../src/fuzzer.cpp
 CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o: CMakeFiles/fuzzproto.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774029605/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -MF CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/fuzzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/fuzz-binary-protocol_1774159205/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -MF CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o.d -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/fuzzer.cpp
 
 CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774029605/src/fuzzer.cpp > CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/fuzz-binary-protocol_1774159205/src/fuzzer.cpp > CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.i
 
 CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774029605/src/fuzzer.cpp -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/fuzz-binary-protocol_1774159205/src/fuzzer.cpp -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.s
 
 # Object files for target fuzzproto
 fuzzproto_OBJECTS = \
@@ -125,7 +125,7 @@ libfuzzproto.a: CMakeFiles/fuzzproto.dir/src/mutator.cpp.o
 libfuzzproto.a: CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o
 libfuzzproto.a: CMakeFiles/fuzzproto.dir/build.make
 libfuzzproto.a: CMakeFiles/fuzzproto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/fuzz-binary-protocol_1774029605/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libfuzzproto.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/fuzz-binary-protocol_1774159205/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libfuzzproto.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/fuzzproto.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fuzzproto.dir/link.txt --verbose=$(VERBOSE)
 
@@ -138,6 +138,6 @@ CMakeFiles/fuzzproto.dir/clean:
 .PHONY : CMakeFiles/fuzzproto.dir/clean
 
 CMakeFiles/fuzzproto.dir/depend:
-	cd /tmp/fuzz-binary-protocol_1774029605/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/fuzz-binary-protocol_1774029605 /tmp/fuzz-binary-protocol_1774029605 /tmp/fuzz-binary-protocol_1774029605/build /tmp/fuzz-binary-protocol_1774029605/build /tmp/fuzz-binary-protocol_1774029605/build/CMakeFiles/fuzzproto.dir/DependInfo.cmake --color=$(COLOR)
+	cd /tmp/fuzz-binary-protocol_1774159205/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/fuzz-binary-protocol_1774159205 /tmp/fuzz-binary-protocol_1774159205 /tmp/fuzz-binary-protocol_1774159205/build /tmp/fuzz-binary-protocol_1774159205/build /tmp/fuzz-binary-protocol_1774159205/build/CMakeFiles/fuzzproto.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fuzzproto.dir/depend
 
