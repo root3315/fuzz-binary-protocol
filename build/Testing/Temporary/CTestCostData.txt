@@ -1,5 +1,0 @@
-ProtocolTest 1 0.00310722
-MutatorTest 1 0.00347828
-FuzzerTest 1 0.00316637
-IntegrationTest 1 0.00316454
----

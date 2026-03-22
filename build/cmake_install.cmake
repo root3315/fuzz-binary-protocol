@@ -1,4 +1,4 @@
-# Install script for directory: /tmp/fuzz-binary-protocol_1774029605
+# Install script for directory: /tmp/fuzz-binary-protocol_1774159205
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/tmp/fuzz-binary-protocol_1774029605/build/fuzz-binary-protocol")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/tmp/fuzz-binary-protocol_1774159205/build/fuzz-binary-protocol")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/fuzz-binary-protocol")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -60,9 +60,9 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/fuzzproto" TYPE FILE FILES
-    "/tmp/fuzz-binary-protocol_1774029605/include/protocol.h"
-    "/tmp/fuzz-binary-protocol_1774029605/include/mutator.h"
-    "/tmp/fuzz-binary-protocol_1774029605/include/fuzzer.h"
+    "/tmp/fuzz-binary-protocol_1774159205/include/protocol.h"
+    "/tmp/fuzz-binary-protocol_1774159205/include/mutator.h"
+    "/tmp/fuzz-binary-protocol_1774159205/include/fuzzer.h"
     )
 endif()
 
@@ -74,5 +74,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/tmp/fuzz-binary-protocol_1774029605/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/tmp/fuzz-binary-protocol_1774159205/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

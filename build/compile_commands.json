@@ -1,27 +1,27 @@
 [
 {
-  "directory": "/tmp/fuzz-binary-protocol_1774029605/build",
-  "command": "/usr/bin/c++  -I/tmp/fuzz-binary-protocol_1774029605/include -O3 -DNDEBUG -Wall -Wextra -Wpedantic -O2 -std=c++17 -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/protocol.cpp",
-  "file": "/tmp/fuzz-binary-protocol_1774029605/src/protocol.cpp"
+  "directory": "/tmp/fuzz-binary-protocol_1774159205/build",
+  "command": "/usr/bin/c++ -DDEBUG=1 -I/tmp/fuzz-binary-protocol_1774159205/include -g -Wall -Wextra -Wpedantic -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -std=c++17 -o CMakeFiles/fuzzproto.dir/src/protocol.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/protocol.cpp",
+  "file": "/tmp/fuzz-binary-protocol_1774159205/src/protocol.cpp"
 },
 {
-  "directory": "/tmp/fuzz-binary-protocol_1774029605/build",
-  "command": "/usr/bin/c++  -I/tmp/fuzz-binary-protocol_1774029605/include -O3 -DNDEBUG -Wall -Wextra -Wpedantic -O2 -std=c++17 -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/mutator.cpp",
-  "file": "/tmp/fuzz-binary-protocol_1774029605/src/mutator.cpp"
+  "directory": "/tmp/fuzz-binary-protocol_1774159205/build",
+  "command": "/usr/bin/c++ -DDEBUG=1 -I/tmp/fuzz-binary-protocol_1774159205/include -g -Wall -Wextra -Wpedantic -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -std=c++17 -o CMakeFiles/fuzzproto.dir/src/mutator.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/mutator.cpp",
+  "file": "/tmp/fuzz-binary-protocol_1774159205/src/mutator.cpp"
 },
 {
-  "directory": "/tmp/fuzz-binary-protocol_1774029605/build",
-  "command": "/usr/bin/c++  -I/tmp/fuzz-binary-protocol_1774029605/include -O3 -DNDEBUG -Wall -Wextra -Wpedantic -O2 -std=c++17 -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/fuzzer.cpp",
-  "file": "/tmp/fuzz-binary-protocol_1774029605/src/fuzzer.cpp"
+  "directory": "/tmp/fuzz-binary-protocol_1774159205/build",
+  "command": "/usr/bin/c++ -DDEBUG=1 -I/tmp/fuzz-binary-protocol_1774159205/include -g -Wall -Wextra -Wpedantic -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -std=c++17 -o CMakeFiles/fuzzproto.dir/src/fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/fuzzer.cpp",
+  "file": "/tmp/fuzz-binary-protocol_1774159205/src/fuzzer.cpp"
 },
 {
-  "directory": "/tmp/fuzz-binary-protocol_1774029605/build",
-  "command": "/usr/bin/c++  -I/tmp/fuzz-binary-protocol_1774029605/include -O3 -DNDEBUG -Wall -Wextra -Wpedantic -O2 -std=c++17 -o CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/src/main.cpp",
-  "file": "/tmp/fuzz-binary-protocol_1774029605/src/main.cpp"
+  "directory": "/tmp/fuzz-binary-protocol_1774159205/build",
+  "command": "/usr/bin/c++ -DDEBUG=1 -I/tmp/fuzz-binary-protocol_1774159205/include -g -Wall -Wextra -Wpedantic -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -std=c++17 -o CMakeFiles/fuzz-binary-protocol.dir/src/main.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/src/main.cpp",
+  "file": "/tmp/fuzz-binary-protocol_1774159205/src/main.cpp"
 },
 {
-  "directory": "/tmp/fuzz-binary-protocol_1774029605/build",
-  "command": "/usr/bin/c++  -I/tmp/fuzz-binary-protocol_1774029605/include -O3 -DNDEBUG -Wall -Wextra -Wpedantic -O2 -std=c++17 -o CMakeFiles/test_fuzzer.dir/tests/test_fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774029605/tests/test_fuzzer.cpp",
-  "file": "/tmp/fuzz-binary-protocol_1774029605/tests/test_fuzzer.cpp"
+  "directory": "/tmp/fuzz-binary-protocol_1774159205/build",
+  "command": "/usr/bin/c++ -DDEBUG=1 -I/tmp/fuzz-binary-protocol_1774159205/include -g -Wall -Wextra -Wpedantic -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -std=c++17 -o CMakeFiles/test_fuzzer.dir/tests/test_fuzzer.cpp.o -c /tmp/fuzz-binary-protocol_1774159205/tests/test_fuzzer.cpp",
+  "file": "/tmp/fuzz-binary-protocol_1774159205/tests/test_fuzzer.cpp"
 }
 ]
